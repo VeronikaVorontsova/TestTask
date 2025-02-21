@@ -16,24 +16,19 @@ public class TriangleSides {
     }
 
     private static void compareTriangleSides(int side1, int side2, int side3) {
+        if (side1 + side2 <= side3 || side1 + side3 <= side2 || side3 + side2 <= side1) {
+            System.out.println("Такого треугольника быть не может");
+            return;
+        }
+        if (side1 == side2 && side2 == side3) {
+            System.out.println("Треугольник равносторонний");
+        }
+        if (side1 == side2 || side1 == side3 || side2 == side3) {
+            System.out.println("Треугольник равнобедренный");
+        }
         if (side1 != side2 && side2 != side3 && side1 != side3) {
-            if (side1 + side2 <= side3 || side1 + side3 <= side2 || side3 + side2 <= side1) {
-                System.out.println("Такого треугольника быть не может");
-            } else {
-                System.out.println("Треугольник разносторонний");
-            }
-        } else if (side1 == side2 || side1 == side3 || side2 == side3) {
-            if (side1 + side2 <= side3 || side1 + side3 <= side2 || side3 + side2 <= side1) {
-                System.out.println("Такого треугольника быть не может");
-            } else {
-                System.out.println("Треугольник равнобедренный");
-            }
-        } else if (side1 == side2 && side2 == side3) {
-            if (side1 + side2 <= side3 || side1 + side3 <= side2 || side3 + side2 <= side1) {
-                System.out.println("Такого треугольника быть не может");
-            } else {
-                System.out.println("Треугольник равносторонний");
+           System.out.println("Треугольник разносторонний");
             }
         }
     }
-}
+
